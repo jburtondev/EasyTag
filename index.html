@@ -1,0 +1,39 @@
+<!--
+
+	EasyTag is a free online tool aimed at helping non-developers to produce simple HTML. 
+	
+	It is still under development!
+
+	Author: Jamie Burton - www.jjburton.com
+	
+-->
+<html>
+    
+    <head>
+		
+		<script type ="text/javascript" src ="main.js"></script>
+		
+		<title>EasyTag - A free online HTML generator tool</title>
+		
+	</head>
+    
+    <body>
+        
+        <select>
+            <option value="p_tag">P tag</option>
+            <option value="strong_tag">Strong tag</option>
+            <option value="em_tag">EM_tag</option>
+        </select>
+		
+        <input id="p_tag1" type="text" placeholder="Schrieben Sie hier">
+        <br>
+        <textarea id="p_tag_export" class="box_big" placeholder="HTML werde hier sein" style="width:250px;"></textarea>
+        <br>
+        <button id="p_tag_btn" onclick="createInputElement()" style="width:110px">Add field</button>
+        <button id="p_tag_btn" onclick="export_p_tag()" style="width:136px">Convert to tag</button>
+        <br>
+        <button style="width:250px" onclick="take_tag()">Take tag(s)</button>
+		
+    </body>
+
+</html>
