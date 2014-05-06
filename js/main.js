@@ -1,4 +1,4 @@
-//Create
+//Create empty array to store user inputs
 tagList = [];
 
 //Variable containing the first input box
