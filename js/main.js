@@ -1,4 +1,3 @@
-
 //Create an empty array to store the users input data
 tagList = [];
 
@@ -36,6 +35,11 @@ function createInputElement() {
     console.log("Inserted after p 'Enter text here'");
     //Increases the style width of the 'big_box' class
     var box_big = document.querySelector(".box_big").style.width = "407px";
+	
+	if (i) {
+		var change = document.getElementById("p_tag_btn").innerHTML = "Remove button";
+	} 
+	
 }
 
 
@@ -82,9 +86,9 @@ Tag_Exporter = {
     }
 }
 
-//Inherits properties from 'Tag_Exporter'
+//Inherits properties from 'Tag_Exporter', specifically the 'ConvertTag' function
 Paragraph_Tag_Exporter = Object.create(Tag_Exporter);
-//Paragraph_Tag_Exporter.ConvertTag() will convert the user input to the tag
+//Paragraph_Tag_Exporter.ConvertTag() will convert the user input into a HTML paragraph tag
 
 //Function to take the tag(s) output, create a new 'textbox' element and place it there *Needs fixing*
 function take_tag() {
