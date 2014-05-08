@@ -77,7 +77,7 @@ Tag_Exporter = {
 
         } else {
 			
-			var newField = document.getElementById("newInput").innerHTML = element.value; //Variable containing the new element
+	var newField = document.getElementById("newInput").innerHTML = element.value; //Variable containing the new element
             tagList.push(p.value, newField); // Stores data pushed from p_value 
             tagList.toString(); //Converts the tagList array to a string
             //3) If the new <input> element has been created then export both ' tagList[0] ' & ' tagList[1]'
