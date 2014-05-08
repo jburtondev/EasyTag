@@ -39,13 +39,12 @@ function createInputElement() {
     console.log("Inserted after p 'Enter text here'");
     //Increases the style width of the 'big_box' class
 	
+//Fix this button
 	if (i) {
 		var change = document.getElementById("p_tag_btn").innerHTML = "Remove button";
 	} 
 	
 }
-
-
 
 //Function that exports the <input> text within tags'<p>UsersText</p>
 Tag_Exporter = {
