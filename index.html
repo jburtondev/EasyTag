@@ -12,28 +12,36 @@
 
 <html>
     
-    <head>
+    	<head>
 		<script type="text/javascript" src="js/main.js"></script>
-	</head>
-    
+		<link href="/css/style.css" rel="stylesheet" type="text/css">
+    	
     <body>
-    
-        <!--<h1>Online tag generator</h1>-->
-        <!--<h2>No html/little knowledge HTML knowledge, use this free!</h2>-->
-        <select>
-            <option value="p_tag">P tag</option>
-            <option value="strong_tag">Strong tag</option>
-            <option value="em_tag">EM_tag</option>
-        </select>
-		
-        <input id="p_tag1" type="text" placeholder="Schrieben Sie hier">
-        <br>
-        <textarea id="p_tag_export" class="box_big" placeholder="HTML werde hier sein" style="width:250px;"></textarea>
-        <br>
-        <button id="p_tag_btn" onclick="createInputElement()" style="width:110px">Add field</button>
-        <button id="p_tag_btn" onclick="Paragraph_Tag_Exporter.ConvertTag()" style="width:136px">Convert to tag</button>
-        <br>
-        <button style="width:250px" onclick="take_tag()">Take tag(s)</button>
+	<div id = "form">
+			<div id = "form_container">
+				<select id ="selectTag">
+					<option value="p">P tag</option>
+					<option value="strong">Strong tag</option>
+					<option value="em">em (italics) tag</option>
+					<option value="button">Button tag</option>
+					<option value="article">Article tag</option>
+					<option value="table">Table tag</option>
+					<option value="tr">Table row tag</option>
+					<option value="td">Table data tag</option>
+					<option value="style">Style tag</option>
+					<option value="script">Script tag</option>
+				</select>
+				
+				<input id="p_tag1" type="text" placeholder="Schrieben Sie hier">
+				<br>
+				<textarea id="p_tag_export" class="box_big" placeholder="HTML werde hier sein" ></textarea>
+				<br>
+				<button id="p_tag_btn" onclick="createInputElement()" style="width:136px">Add field</button>
+				<button id="p_tag_btn" onclick="Paragraph_Tag_Exporter.ConvertTag()" style="width:136px">Convert tag</button>
+				<br>
+				<button style="width:276px" onclick="take_tag()">Take tag(s)</button>
+			</div>
+		</div>
 		
     </body>
 
