@@ -1,3 +1,7 @@
+var box_big = document.getElementById("p_tag_export").style.width = 276 + "px";
+
+
+		
 //Create an empty array to store the users input data
 tagList = [];
 
@@ -34,7 +38,6 @@ function createInputElement() {
     insertAfter(p, element); //See function 'insertAfter'
     console.log("Inserted after p 'Enter text here'");
     //Increases the style width of the 'big_box' class
-    var box_big = document.querySelector(".box_big").style.width = "407px";
 	
 	if (i) {
 		var change = document.getElementById("p_tag_btn").innerHTML = "Remove button";
@@ -51,17 +54,18 @@ Tag_Exporter = {
         p.style.color = "black"; //Initialise/Reinitialise the input color to black
 
         /*	
-						Runs conditional logic: 
-							...This sequence is documented in the below code
-							1) Checks if the 'createInputElement()' function has created a new element
-							2) If a new <input> element has not been created, export '<p>UsersText</p>'
-							3) If the new <input> element has been created then export both ' tagList[0] ' & ' tagList[1]'	
-					*/
+		Runs conditional logic: 
+		...This sequence is documented in the below code
+		1) Checks if the 'createInputElement()' function has created a new element
+		2) If a new <input> element has not been created, export '<p>UsersText</p>'
+		3) If the new <input> element has been created then export both ' tagList[0] ' & ' tagList[1]'	
+	*/
 
         // 1) Checks if the 'createInputElement()' function has created a new element
         if (typeof element === 'undefined') {
             // 2) If a new <input> element has not been created, export '<p>UsersText</p>'
-            var p_export = document.getElementById("p_tag_export").innerHTML = p_export = "<p>" + p.value + "</p>";
+			var p_export = document.getElementById("p_tag_export").innerHTML = p_export = "<"+document.getElementById("selectTag").value+">" + p.value + "</"+document.getElementById("selectTag").value+">";
+			
             p.style.color = "green";
 
             if (p_export == "<p></p>") {
@@ -72,14 +76,15 @@ Tag_Exporter = {
             }
 
         } else {
-
-            var newField = document.getElementById("newInput").innerHTML = element.value; //Variable containing the new element
+			
+			var newField = document.getElementById("newInput").innerHTML = element.value; //Variable containing the new element
             tagList.push(p.value, newField); // Stores data pushed from p_value 
             tagList.toString(); //Converts the tagList array to a string
             //3) If the new <input> element has been created then export both ' tagList[0] ' & ' tagList[1]'
-            var p_export = document.getElementById("p_tag_export").innerHTML = "<p>" + tagList[0] + "</p>" + '\n' + "<p>" + tagList[1] + "</p>";
 
-        }
+            var p_export = document.getElementById("p_tag_export").innerHTML = "<"+document.getElementById("selectTag").value+">" + tagList[0] + "</"+document.getElementById("selectTag").value+">" + '\n' + "<"+document.getElementById("selectTag").value+">" + tagList[1] + "</"+document.getElementById("selectTag").value+">";
+				
+        } 
 
         console.log(p_export.length);
 
@@ -89,8 +94,6 @@ Tag_Exporter = {
 //Inherits properties from 'Tag_Exporter', specifically the 'ConvertTag' function
 Paragraph_Tag_Exporter = Object.create(Tag_Exporter);
 //Paragraph_Tag_Exporter.ConvertTag() will convert the user input into a HTML paragraph tag
-
-//Function to take the tag(s) output, create a new 'textbox' element and place it there *Needs fixing*
 function take_tag() {
     make_box = document.createElement("textbox"); //Creates <input> element
     make_box.setAttribute("id", "take_tag");
