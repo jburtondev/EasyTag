@@ -44,7 +44,7 @@ function createInputElement() {
 
 }
 
-//Function that exports the <input> text within tags'<p>UsersText</p>
+//Function that exports the <input> text within tags
 Tag_Exporter = {
     ConvertTag: function () {
 
