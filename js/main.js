@@ -44,17 +44,26 @@ function createInputElement() {
 
 }
 
-//Function that exports the <input> text within tags
+//Function that exports the <input> text within tags'<p>UsersText</p>
 Tag_Exporter = {
     ConvertTag: function () {
 
         p.style.color = "black"; //Initialise/Reinitialise the input color to black
+        
+        /*	
+				Runs conditional logic: 
+				...This sequence is documented in the below code
+				1) Checks if the 'createInputElement()' function has created a new element
+				2) If a new <input> element has not been created, export '<tag>UsersText</tag>'
+				3) If the new <input> element has been created then export both 'selectTag.value' & 'selectTag.value'		
+			*/
 
         // 1) Checks if the 'createInputElement()' function has created a new element
         if (typeof element === 'undefined') {
             // 2) If a new <input> element has not been created, export '<p>UsersText</p>'
 
             //Selects the '<select>' id and gets the value
+            //Uses this value to then 
             var p_export = document.getElementById("p_tag_export").innerHTML = p_export = "<" + document.getElementById("selectTag").value + ">" + p.value + "</" + document.getElementById("selectTag").value + ">";
 
             p.style.color = "green";
@@ -75,12 +84,25 @@ Tag_Exporter = {
     }
 }
 
+
+
 //Iterates through the countElement
 function exportArray() {
 
     var j = "";
     for (var i = 0; i < countElement; i++) {
         if (document.getElementById("newInput" + i).value != "") {
+            var p = document.getElementById("newInput" + i).value;
+            tagList.push(p)
+
+
+            //Sorting algorithm function
+            tagList.sort(
+            function (a, b) {
+                return a - b;
+            });
+
+            console.log("Pushed newInput[] into array");
             j = j + "<" + document.getElementById("selectTag").value + ">" + document.getElementById("newInput" + i).value + "</" + document.getElementById("selectTag").value + ">" + "\n";
 
         }
