@@ -118,7 +118,8 @@ function exportArray() {
             tagList.length = 0; //Empty array to prevent duplicate values
 
             console.log("Pushed newInput " + [i] + " into array " + document.getElementById("selectTag").value);
-            j = j + "<" + document.getElementById("selectTag").value + ">" + document.getElementById("newInput" + i).value + "</" + document.getElementById("selectTag").value + ">" + "\n";
+            j = j + "<" + document.getElementById("selectTag").value + ">" + document.getElementById("newInput" + i).value +
+            	    "</" + document.getElementById("selectTag").value + ">" + "\n";
 
         }
     }
