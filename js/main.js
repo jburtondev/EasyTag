@@ -68,7 +68,9 @@ Tag_Exporter = {
 
             //Selects the '<select>' id and gets the value
             //Uses this value to then 
-            var p_export = document.getElementById("p_tag_export").innerHTML = p_export = "<" + document.getElementById("selectTag").value + ">" + p.value + "</" + document.getElementById("selectTag").value + ">";
+            var p_export = document.getElementById("p_tag_export").innerHTML = p_export =
+            "<" + document.getElementById("selectTag").value + ">" + p.value +
+            "</" + document.getElementById("selectTag").value + ">";
 
             p.style.color = "green";
 
