@@ -1,8 +1,5 @@
-//------------------------------------Global space---------------------------------------------//
+/------------------------------------Global space---------------------------------------------/ /
 
-//Sets the main <textbox> height and width
-var box_big = document.getElementById("p_tag_export").style.width = 276 + "px";
-document.getElementById("p_tag_export").style.height = 276 + "px";
 
 //Variable containing the first input box
 var p = document.getElementById("newInput0");
@@ -21,7 +18,9 @@ var element;
 //Works with the 'createInputElement()' function to insert after the current <input> field
 function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+
 }
+
 
 //------------------------------------ End of Global space---------------------------------------------//
 
@@ -116,13 +115,13 @@ function exportArray() {
             });
 
             tagList.length = 0; //Empty array to prevent duplicate values
-            
-            console.log("Pushed newInput[] into array " + document.getElementById("selectTag").value);
+
+            console.log("Pushed newInput " + [i] + " into array " + document.getElementById("selectTag").value);
             j = j + "<" + document.getElementById("selectTag").value + ">" + document.getElementById("newInput" + i).value + "</" + document.getElementById("selectTag").value + ">" + "\n";
 
         }
     }
-    
+
 
 
     return j;
@@ -136,11 +135,17 @@ Paragraph_Tag_Exporter = Object.create(Tag_Exporter);
 
 
 //-----------------------------------Take Tag Button Function - *Needs fixing*-----------------------------------//
-function take_tag() {
-    make_box = document.createElement("textbox"); //Creates <input> element
-    make_box.setAttribute("id", "take_tag");
-    console.log("TextBox Element created, with id added");
-    make_box_text = document.getElementById("take_tag");
-    document.body.appendChild(make_box);
+function takeTag() {
+
+    var text_output = document.getElementById("p_tag_export");
+
+    var html_holder = document.getElementById("export_box"); //.innerHTML = text_output.value;
+
+    html_holder.innerHTML = html_holder.innerHTML + text_output.innerHTML + "\n";
+
+    text_output.value = "";
+
+    console.log("Emptied main output");
+
 }
 //-----------------------------------End of 'Take Tag' Button Function - *Needs fixing*-----------------------------------//
