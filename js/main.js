@@ -1,4 +1,4 @@
-/------------------------------------Global space---------------------------------------------/ /
+//------------------------------------Global space---------------------------------------------/ /
 
 
 //Variable containing the first input box
@@ -20,7 +20,6 @@ function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 
 }
-
 
 //------------------------------------ End of Global space---------------------------------------------//
 
