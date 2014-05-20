@@ -1,48 +1,29 @@
+<div id="form">
+    <div id="form_container">
+        <select id="selectTag0">
+            <option value="p">P tag</option>
+            <option value="strong">Strong tag</option>
+            <option value="em">em (italics) tag</option>
+            <option value="button">Button tag</option>
+            <option value="article">Article tag</option>
+            <option value="table">Table tag</option>
+            <option value="tr">Table row tag</option>
+            <option value="td">Table data tag</option>
+            <option value="style">Style tag</option>
+            <option value="img">Img tag</option>
+            <option value="script">Script tag</option>
+        </select>
 
-<!--
+        <input id="newInput0" type="text" placeholder="Schrieben Sie hier">
+        <br>
+        <textarea id="p_tag_export" placeholder="HTML werde hier sein"></textarea>
+        <br>
+        <button id="p_tag_btn" onclick="createInputElement()">Add field</button>
+        <button id="p_tag_btn" onclick="Paragraph_Tag_Exporter.ConvertTag()">Convert tag</button>
+        <br>
+        <button id="take_tag_btn" onclick="takeTag()">Take tag(s)</button>
 
-	EasyTag is a free online tool aimed at helping non-developers to produce simple HTML. 
-	
-	It is still under development!
+        <textarea id="export_box" style="float:right; width:700px; max-width:700px;"></textarea>
 
-	Developer: Jamie Burton - www.jjburton.com
-	
--->
-<!DOCTYPE html>
-
-<html>
-    
-    	<head>
-		<script type="text/javascript" src="js/main.js"></script>
-		<link href="/css/style.css" rel="stylesheet" type="text/css">
-    	
-    <body>
-        <div id ="form">
-			<div id ="form_container">
-				<select id ="selectTag">
-					<option value="p">P tag</option>
-					<option value="strong">Strong tag</option>
-					<option value="em">em (italics) tag</option>
-					<option value="button">Button tag</option>
-					<option value="article">Article tag</option>
-					<option value="table">Table tag</option>
-					<option value="tr">Table row tag</option>
-					<option value="td">Table data tag</option>
-					<option value="style">Style tag</option>
-					<option value="script">Script tag</option>
-				</select>
-				
-				<input id="newInput0" type="text" placeholder="Schrieben Sie hier">
-				<br>
-				<textarea id="p_tag_export" class="box_big" placeholder="HTML werde hier sein" ></textarea>
-				<br>
-				<button id="p_tag_btn" onclick="createInputElement()" style="width:136px">Add field</button>
-				<button id="p_tag_btn" onclick="Paragraph_Tag_Exporter.ConvertTag()" style="width:136px">Convert tag</button>
-				<br>
-				<button style="width:276px" onclick="take_tag()">Take tag(s)</button>
-			</div>
-		</div>
-		
-    </body>
-
-</html>
+    </div>
+</div>
