@@ -1,5 +1,10 @@
-//------------------------------------Global space---------------------------------------------//
 
+///------------------------------------Global space---------------------------------------------//
+
+var select_elem = document.getElementById("selectTag0");
+var select_elem_clone = select_elem.cloneNode(true);
+
+//var select_tags = document.getElementById("selectTag");
 
 //Variable containing the first input box
 var p = document.getElementById("newInput0");
@@ -10,7 +15,7 @@ var error_message = "Es funktioniert nicht!";
 //Value of the '<p></p>' character length
 var tag_val = 7;
 
-var countElement = 1;
+var count_element = 1;
 
 //Variable containing the new element generated from 'createInputElement()'
 var element;
@@ -28,14 +33,20 @@ function insertAfter(referenceNode, newNode) {
 //-----------------------------------Add Field Button Function-----------------------------------//
 
 function createInputElement() {
+    var select_elem_clone = select_elem.cloneNode(true);
+    select_elem_clone.setAttribute("id", "selectTag" + count_element);
+    select_elem_clone.setAttribute("style", "float:left;");
+    document.body.appendChild(select_elem_clone);
+    insertAfter(p, select_elem_clone); //See function 'insertAfter'
+
     element = document.createElement("input"); //Creates input element
     element.setAttribute("type", "text"); //Sets the element 'type = text'
-    element.setAttribute("id", "newInput" + countElement); //Sets the element 'id = newInput'
+    element.setAttribute("id", "newInput" + count_element); //Sets the element 'id = newInput'
     element.setAttribute("class", "latestfield");
     element.setAttribute("placeholder", "Enter more text here"); //Sets the element 'placeholder = Enter more text here'
     document.body.appendChild(element); //Appends new element to the body
     console.log("<input> element created");
-    countElement++;
+    count_element++;
     //Variable containing the new element
     var i = document.getElementById("newInput"); //Variable containing the new element
 
@@ -54,13 +65,13 @@ Tag_Exporter = {
 
         p.style.color = "black"; //Initialise/Reinitialise the input color to black
 
-	/*	
-	Runs conditional logic: 
-	...This sequence is documented in the below code
-	1) Checks if the 'createInputElement()' function has created a new element
-	2) If a new <input> element has not been created, export '<tag>UsersText</tag>'
-	3) If the new <input> element has been created then export both 'selectTag.value' & 'selectTag.value'	
-	*/
+        /*	
+			Runs conditional logic: 
+			...This sequence is documented in the below code
+			1) Checks if the 'createInputElement()' function has created a new element
+			2) If a new <input> element has not been created, export '<tag>UsersText</tag>'
+			3) If the new <input> element has been created then export both 'selectTag.value' & 'selectTag.value'	
+			*/
 
         // 1) Checks if the 'createInputElement()' function has created a new element
         if (typeof element === 'undefined') {
@@ -69,14 +80,14 @@ Tag_Exporter = {
             //Selects the '<select>' id and gets the value
             //Uses this value to then 
             var p_export = document.getElementById("p_tag_export").innerHTML = p_export =
-            "<" + document.getElementById("selectTag").value + ">" + p.value +
-            "</" + document.getElementById("selectTag").value + ">";
+                "<" + document.getElementById("selectTag" + count_element).value + ">" + p.value +
+                "</" + document.getElementById("selectTag" + count_element).value + ">";
 
             p.style.color = "green";
 
             if (p_export == "<p></p>") {
                 console.log("User submitted empty form");
-                p.value = "Empty form page..";
+                p.value = "User submitted empty form";
                 p.style.color = "red";
 
             }
@@ -95,12 +106,12 @@ Tag_Exporter = {
 
 //-----------------------------------Export Array Function-----------------------------------//
 
-//Iterates through the countElement
+//Iterates through the count_element
 function exportArray() {
 
     var j = "";
-    for (var i = 0; i < countElement; i++) {
-        if (document.getElementById("newInput" + i).value !== "") {
+    for (var i = 0; i < count_element; i++) {
+        if (document.getElementById("newInput" + i).value !== "" && document.getElementById("newInput" + i).value !== "") {
 
             //Create an empty array to store the users input data
             var tagList = [];
@@ -111,15 +122,14 @@ function exportArray() {
             //Perfom sorting algorithm function
             tagList.sort(
 
-            function (a, b) {
-                return a - b;
-            });
+                function (a, b) {
+                    return a - b;
+                });
 
             tagList.length = 0; //Empty array to prevent duplicate values
 
-            console.log("Pushed newInput " + [i] + " into array " + document.getElementById("selectTag").value);
-            j = j + "<" + document.getElementById("selectTag").value + ">" + document.getElementById("newInput" + i).value +
-            	    "</" + document.getElementById("selectTag").value + ">" + "\n";
+            console.log("Pushed newInput " + [i] + " into array " + document.getElementById("selectTag0").value);
+            j = j + "<" + document.getElementById("selectTag" + i).value + ">" + document.getElementById("newInput" + i).value + "</" + document.getElementById("selectTag" + i).value + ">" + "\n";
 
         }
     }
@@ -139,15 +149,21 @@ Paragraph_Tag_Exporter = Object.create(Tag_Exporter);
 //-----------------------------------Take Tag Button Function - *Needs fixing*-----------------------------------//
 function takeTag() {
 
-    var text_output = document.getElementById("p_tag_export");
+    if (p.value === "") {
+        alert("Nothing to output");
+    } else {
 
-    var html_holder = document.getElementById("export_box"); //.innerHTML = text_output.value;
+        var text_output = document.getElementById("p_tag_export");
 
-    html_holder.innerHTML = html_holder.innerHTML + text_output.innerHTML + "\n";
+        var html_holder = document.getElementById("export_box"); //.innerHTML = text_output.value;
 
-    text_output.value = "";
+        html_holder.innerHTML = html_holder.innerHTML + text_output.innerHTML + "\n";
 
-    console.log("Emptied main output");
+        text_output.value = "";
+
+        console.log("Emptied main output");
+
+    }
 
 }
 //-----------------------------------End of 'Take Tag' Button Function - *Needs fixing*-----------------------------------//
