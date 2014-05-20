@@ -1,19 +1,17 @@
 
 ///------------------------------------Global space---------------------------------------------//
 
+//Variable containing the first <select> element on the page
 var select_elem = document.getElementById("selectTag0");
-var select_elem_clone = select_elem.cloneNode(true);
 
-//var select_tags = document.getElementById("selectTag");
+//Clone of the var 'select_elem'
+var select_elem_clone = select_elem.cloneNode(true);
 
 //Variable containing the first input box
 var p = document.getElementById("newInput0");
 
 //Variable containing error message for 'export_p_tag()' function
 var error_message = "Es funktioniert nicht!";
-
-//Value of the '<p></p>' character length
-var tag_val = 7;
 
 var count_element = 1;
 
@@ -77,32 +75,32 @@ Tag_Exporter = {
         if (typeof element === 'undefined') {
             // 2) If a new <input> element has not been created, export '<p>UsersText</p>'
 
-            //Selects the '<select>' id and gets the value
-            //Uses this value to then 
-            var p_export = document.getElementById("p_tag_export").innerHTML = p_export =
-                "<" + document.getElementById("selectTag" + count_element).value + ">" + p.value +
-                "</" + document.getElementById("selectTag" + count_element).value + ">";
+			var p_export = document.getElementById("p_tag_export").innerHTML = p_export =
+			"<" + document.getElementById("selectTag0").value + ">" + p.value +
+			"</" + document.getElementById("selectTag0").value + ">";
+			
+			p.style.color = "green";
+			
+			} else
+			
+			            var p_export = document.getElementById("p_tag_export").innerHTML = exportArray();
 
-            p.style.color = "green";
+						p.style.color = "green";
 
-            if (p_export == "<p></p>") {
-                console.log("User submitted empty form");
-                p.value = "User submitted empty form";
-                p.style.color = "red";
+						if (p_export == "<p></p>") {
+							console.log("User submitted empty form");
+							p.value = "User submitted empty form";
+							p.style.color = "red";
 
             }
 
-        } else {
-
-            var p_export = document.getElementById("p_tag_export").innerHTML = exportArray();
-
         }
 
-    }
+    };
 
     //-----------------------------------End of 'Convert Tag Button' Function-----------------------------------//
 
-};
+
 
 //-----------------------------------Export Array Function-----------------------------------//
 
