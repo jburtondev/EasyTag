@@ -65,13 +65,13 @@ Tag_Exporter = {
 
         p.style.color = "black"; //Initialise/Reinitialise the input color to black
 
-        /*	
-			Runs conditional logic: 
-			...This sequence is documented in the below code
-			1) Checks if the 'createInputElement()' function has created a new element
-			2) If a new <input> element has not been created, export '<tag>UsersText</tag>'
-			3) If the new <input> element has been created then export both 'selectTag.value' & 'selectTag.value'	
-			*/
+	/*	
+	Runs conditional logic: 
+	...This sequence is documented in the below code
+	1) Checks if the 'createInputElement()' function has created a new element
+	2) If a new <input> element has not been created, export '<tag>UsersText</tag>'
+	3) If the new <input> element has been created then export both 'selectTag.value' & 'selectTag.value'	
+	*/
 
         // 1) Checks if the 'createInputElement()' function has created a new element
         if (typeof element === 'undefined') {
