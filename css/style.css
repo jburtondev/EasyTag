@@ -1,22 +1,30 @@
-/*EasyTag CSS styling*/
+/* CSS Document */
 
-#body{
-	margin:auto;
-	width: 960px;
-	background-color: #f5f5f5;
+body {
+	margin-left: 10px;
 }
 
-#form{
-	position:relative;
-	right:330px;
+#form {
+	width: 700px;
 }
 
-#form_container{
-	margin: auto;
-	width: 278px;
-	
+#newInput0 {
+	width: 575px;
+}
+
+#p_tag_export {
+	width: 700px;
+	height: 300px;
+}
+
+#p_tag_btn {
+	width:348px;
+}
+
+#take_tag_btn {
+	width:700px;
 }
 
 .latestfield{
-	width: 276px;
+	width: 578px;
 }
