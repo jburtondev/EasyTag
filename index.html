@@ -1,29 +1,46 @@
-<div id="form">
-    <div id="form_container">
-        <select id="selectTag0">
-            <option value="p">P tag</option>
-            <option value="strong">Strong tag</option>
-            <option value="em">em (italics) tag</option>
-            <option value="button">Button tag</option>
-            <option value="article">Article tag</option>
-            <option value="table">Table tag</option>
-            <option value="tr">Table row tag</option>
-            <option value="td">Table data tag</option>
-            <option value="style">Style tag</option>
-            <option value="img">Img tag</option>
-            <option value="script">Script tag</option>
-        </select>
+<!doctype html>
+<html>
 
-        <input id="newInput0" type="text" placeholder="Schrieben Sie hier">
-        <br>
-        <textarea id="p_tag_export" placeholder="HTML werde hier sein"></textarea>
-        <br>
-        <button id="p_tag_btn" onclick="createInputElement()">Add field</button>
-        <button id="p_tag_btn" onclick="Paragraph_Tag_Exporter.ConvertTag()">Convert tag</button>
-        <br>
-        <button id="take_tag_btn" onclick="takeTag()">Take tag(s)</button>
+<head>
+    <meta charset="utf-8">
+    <title>EasyTag</title>
 
-        <textarea id="export_box" style="float:right; width:700px; max-width:700px;"></textarea>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
+</head>
+
+<body>
+    <div id="form">
+        <div id="form_container">
+            <select id="selectTag0">
+                <option value="p">P tag</option>
+                <option value="strong">Strong tag</option>
+                <option value="em">em (italics) tag</option>
+                <option value="button">Button tag</option>
+                <option value="article">Article tag</option>
+                <option value="table">Table tag</option>
+                <option value="tr">Table row tag</option>
+                <option value="td">Table data tag</option>
+                <option value="style">Style tag</option>
+                <option value="img">Img tag</option>
+                <option value="script">Script tag</option>
+            </select>
+
+            <input id="newInput0" type="text" placeholder="Schrieben Sie hier">
+            <br>
+            <textarea id="p_tag_export" placeholder="HTML werde hier sein"></textarea>
+            <br>
+            <button id="p_tag_btn" onclick="createInputElement()">Add field</button>
+            <button id="p_tag_btn" onclick="Paragraph_Tag_Exporter.ConvertTag()">Convert tag</button>
+            <br>
+            <button id="take_tag_btn" onclick="takeTag()">Take tag(s)</button>
+
+            <textarea id="export_box" style="float:right; width:700px; max-width:700px;"></textarea>
+
+            <script src="js/main.js"></script>
+
+        </div>
     </div>
-</div>
+</body>
+
+</html>
