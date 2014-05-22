@@ -7,4 +7,4 @@ Currently it is in early stages of development and uses pure JavaScript.
 
 EasyTag is written in pure JavaScript, CSS and HTML.
 
-It can be found at http://jjburton.com/EasyTag/index.html
+It can be found at www.jjburton.com/EasyTag/index.html
