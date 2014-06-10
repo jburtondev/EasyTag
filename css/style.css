@@ -1,25 +1,23 @@
-/* CSS Document */
-
 body {
-	margin: auto;
-    width: 50%;
+	margin:auto;
+	width:50%;
 }
 
 #form {
-    position:relative;
-    top:0px;
-	width: 675px;
+	position:relative;
+	top:0;
+	width:675px;
 }
 
 #newInput0 {
-	width: 543px;
+	width:543px;
 }
 
 #p_tag_export {
-    margin: 0px;
-    height: 230px;
-    width: 662px;
-    max-width: 662px;
+	height:230px;
+	margin:0;
+	max-width:662px;
+	width:662px;
 }
 
 #p_tag_btn {
@@ -30,14 +28,13 @@ body {
 	width:669px;
 }
 
-.latestfield{
-	width: 547px;
+.latestfield {
+	width:547px;
 }
 
 #export_box {
-    width:663px;
-    max-width:694px;
-    height:75px;
-    max-height:75px;
+	height:75px;
+	max-height:75px;
+	max-width:694px;
+	width:663px;
 }
-
