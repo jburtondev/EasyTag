@@ -161,6 +161,18 @@ function takeTag() {
 
         console.log("Emptied main output");
 
+        function removeInputFields() {
+            for (i = 1; i < 15; i++) {
+                newInputFields = document.getElementById("newInput" + i);
+                form_container.removeChild(newInputFields);
+                selectTagFields = document.getElementById("selectTag" + i);
+                form_container.removeChild(selectTagFields);
+
+                resetFirstInput = document.getElementById("newInput0").value = "";
+
+            }
+        }
+            removeInputFields();
     }
 
 }
