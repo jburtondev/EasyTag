@@ -1,30 +1,41 @@
 /* CSS Document */
 
 body {
-	margin-left: 10px;
+	margin: auto;
+    width: 50%;
 }
 
 #form {
+    position:relative;
+    top:25px;
 	width: 700px;
 }
 
 #newInput0 {
-	width: 575px;
+	width: 543px;
 }
 
 #p_tag_export {
-	width: 700px;
+	width: 662px;
 	height: 300px;
 }
 
 #p_tag_btn {
-	width:348px;
+	width:332px;
 }
 
 #take_tag_btn {
-	width:700px;
+	width:669px;
 }
 
 .latestfield{
-	width: 578px;
+	width: 547px;
 }
+
+#export_box {
+    width:662px;
+    max-width:694px;
+    height:75px;
+    max-height:75px;
+}
+
