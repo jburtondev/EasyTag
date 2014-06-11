@@ -1,4 +1,3 @@
-
 ///------------------------------------Global space---------------------------------------------//
 
 //Variable containing the first <select> element on the page
@@ -63,7 +62,7 @@ Tag_Exporter = {
 
         p.style.color = "black"; //Initialise/Reinitialise the input color to black
 
-	/*	
+        /*	
 	Runs conditional logic: 
 	...This sequence is documented in the below code
 	1) Checks if the 'createInputElement()' function has created a new element
@@ -75,30 +74,28 @@ Tag_Exporter = {
         if (typeof element === 'undefined') {
             // 2) If a new <input> element has not been created, export '<p>UsersText</p>'
 
-			var p_export = document.getElementById("p_tag_export").innerHTML = p_export =
-			"<" + document.getElementById("selectTag0").value + ">" + p.value +
-			"</" + document.getElementById("selectTag0").value + ">";
-			
-			p.style.color = "green";
-			
-			} else
-			
-			            var p_export = document.getElementById("p_tag_export").innerHTML = exportArray();
+            var p_export = document.getElementById("p_tag_export").innerHTML = p_export =
+                "<" + document.getElementById("selectTag0").value + ">" + p.value +
+                "</" + document.getElementById("selectTag0").value + ">";
 
-						p.style.color = "green";
+            p.style.color = "green";
 
-						if (p_export == "<p></p>") {
-							console.log("User submitted empty form");
-							p.value = "User submitted empty form";
-							p.style.color = "red";
+        } else var p_export = document.getElementById("p_tag_export").innerHTML = exportArray();
 
-            }
+        p.style.color = "green";
+
+        if (p_export == "<p></p>") {
+            console.log("User submitted empty form");
+            p.value = "User submitted empty form";
+            p.style.color = "red";
 
         }
 
-    };
+    }
 
-    //-----------------------------------End of 'Convert Tag Button' Function-----------------------------------//
+};
+
+//-----------------------------------End of 'Convert Tag Button' Function-----------------------------------//
 
 
 
@@ -120,9 +117,9 @@ function exportArray() {
             //Perfom sorting algorithm function
             tagList.sort(
 
-                function (a, b) {
-                    return a - b;
-                });
+            function (a, b) {
+                return a - b;
+            });
 
             tagList.length = 0; //Empty array to prevent duplicate values
 
@@ -172,7 +169,7 @@ function takeTag() {
 
             }
         }
-            removeInputFields();
+        removeInputFields();
     }
 
 }
