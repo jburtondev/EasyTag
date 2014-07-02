@@ -1,4 +1,4 @@
-///------------------------------------Global space---------------------------------------------//
+//------------------------------------Global space---------------------------------------------//
 
 //Variable containing the first <select> element on the page
 var select_elem = document.getElementById("selectTag0");
