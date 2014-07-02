@@ -114,7 +114,7 @@ function exportArray() {
             var p = document.getElementById("newInput" + i).value;
             taglist = tagList.push(p);
 
-            //Perfom sorting algorithm function
+            //Perform sorting algorithm function
             tagList.sort(
 
             function (a, b) {
