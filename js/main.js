@@ -123,7 +123,9 @@ var EasyTag = (function() {
 
                     tagList.length = 0; //Empty array to prevent duplicate values
                     console.log("Pushed newInput " + [i] + " into array " + document.getElementById("selectTag0").value);
-                    j = j + "<" + document.getElementById("selectTag" + i).value + ">" + document.getElementById("newInput" + i).value + "</" + document.getElementById("selectTag" + i).value + ">" + "\n";
+                    j = j + "<" + document.getElementById("selectTag" + i)
+                    .value + ">" + document.getElementById("newInput" + i)
+                    .value + "</" + document.getElementById("selectTag" + i).value + ">" + "\n";
 
                 }
             }
