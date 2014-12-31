@@ -20,10 +20,12 @@
  * DEALINGS IN THE SOFTWARE.
  *
  */
+
 /*
  * Implements module pattern:
  * http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
  */
+
 var EasyTag = (function() {
 
     //Variable containing the first <select> element on the page
@@ -69,13 +71,13 @@ var EasyTag = (function() {
             var i = document.getElementById("newInput"); //Variable containing the new element
             insertAfter(p, element); //See function 'insertAfter'
             console.log("Inserted after p 'Enter text here'");
-            //Increases the style width of the 'big_box' class 
+            //Increases the style width of the 'big_box' css class 
         },
 
-        //-----------------------------------'Convert Tag' Button Function-----------------------------------//
         convertTag: function() {
 
-            p.style.color = "black"; //Initialise/Reinitialise the input color to black
+            //Reinitialise input color
+            p.style.color = "black";
 
             // 1) Checks if the 'createInputElement()' function has created a new element
             if (typeof element === 'undefined') {
@@ -100,7 +102,6 @@ var EasyTag = (function() {
         },
 
         //Iterates through the count_element
-
         exportArray: function() {
 
             var j = "";
